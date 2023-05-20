@@ -65,7 +65,7 @@
                     <mxGeometry y="270" width="140" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="26" value="address" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="560" y="390" width="140" height="240" as="geometry"/>
+                    <mxGeometry x="560" y="429" width="140" height="240" as="geometry"/>
                 </mxCell>
                 <mxCell id="66" value="postal_code" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="26" vertex="1">
                     <mxGeometry y="30" width="140" height="30" as="geometry"/>
@@ -93,7 +93,7 @@
                         <mxPoint x="80" y="580" as="sourcePoint"/>
                         <mxPoint x="470" y="300" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="160" y="615"/>
+                            <mxPoint x="160" y="654"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
