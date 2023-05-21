@@ -35,7 +35,7 @@
 ### Association
 
 - belongs_to             :user
-- has_one                :orders
+- has_one                :order
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :delivery_tyoe
@@ -54,7 +54,7 @@
 
 - belongs_to :user
 - belongs_to :product
-- belongs_to :address
+- has_one    :address
 
 ## addresses テーブル
 
@@ -70,5 +70,5 @@
 
 ### Association
 
-- has_one                :order
+- belongs_to             :order
 - belongs_to_active_hash :prefectures
