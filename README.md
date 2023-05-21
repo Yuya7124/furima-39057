@@ -14,8 +14,8 @@
 
 ### Association
 
-- has_many :products, through :order
-- has_one  :address, through :order
+- has_many :orders
+- has_many :products
 
 
 ## products テーブル
@@ -27,14 +27,15 @@
 | category_id      | integer        | null: false                    |
 | condition_id     | integer        | null: false                    |
 | delivery_tyoe_id | integer        | null: false                    |
-| prefectures_id   | integer        | null: false                    |
+| prefecture_id    | integer        | null: false                    |
 | shipment_date_id | integer        | null: false                    |
 | cost             | integer        | null: false                    |
 | user             | references     | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user, through :order
+- belongs_to             :user
+- has_one                :orders
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :delivery_tyoe
@@ -47,11 +48,12 @@
 | ------- | ---------- | ------------------------------ |
 | user    | references | null: false, foreign_key: true |
 | product | references | null: false, foreign_key: true |
+| address | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :products
+- belongs_to :product
 - belongs_to :address
 
 ## addresses テーブル
@@ -59,14 +61,14 @@
 | Column          | Type       | Options                        |
 | --------------- | -----------| ------------------------------ |
 | postal_code     | integer    | null: false                    |
-| prefectures_id  | integer    | null: false                    |
+| prefecture_id   | integer    | null: false                    |
 | city            | string     | null: false                    |
 | house_number    | string     | null: false                    |
 | building_number | string     |                                |
 | tel_number      | integer    | null: false                    |
-| user            | references | null: false, foreign_key: true |
+| order           | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user, through :order
+- has_one                :order
 - belongs_to_active_hash :prefectures
