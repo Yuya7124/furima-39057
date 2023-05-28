@@ -14,5 +14,5 @@ class User < ApplicationRecord
   validates :read_surname, presence: true, format: { with: VALID_READ_NAME_REGEX }
   validates :read_given_name, presence: true, format: { with: VALID_READ_NAME_REGEX }
   validates :birth_data, presence: true
-  validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX }
+  validates :password, format: { with: VALID_PASSWORD_REGEX }
 end
