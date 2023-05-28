@@ -9,8 +9,8 @@
 | surname            | string | null: false               |
 | given_name         | string | null: false               |
 | read_surname       | string | null: false               |
-| read_surname       | string | null: false               |
-| birthday           | date   | null: false               |
+| read_given_name    | string | null: false               |
+| birth_date         | date   | null: false               |
 
 ### Association
 
