@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_validation :remove_unnecessary_error_messages
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -15,4 +16,10 @@ class User < ApplicationRecord
   validates :read_given_name, presence: true, format: { with: VALID_READ_NAME_REGEX }
   validates :birth_data, presence: true
   validates :password, format: { with: VALID_PASSWORD_REGEX }
+
+  has_many :items
+
+  def remove_unnecessary_error_messages
+    errors.messages.delete(:users)
+  end
 end

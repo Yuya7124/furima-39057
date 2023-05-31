@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2023_05_30_140913) do
     t.text "explanation", null: false
     t.integer "category_id", null: false
     t.integer "condition_id", null: false
-    t.integer "delivery_tyoe_id", null: false
+    t.integer "delivery_type_id", null: false
     t.integer "prefecture_id", null: false
     t.integer "shipment_date_id", null: false
     t.integer "cost", null: false

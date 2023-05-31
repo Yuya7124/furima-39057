@@ -11,12 +11,17 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item =Item.create(item_params)
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
   
   private
   def item_params
-    params.require(:item).permit(:product_name,:image,:explanation,:category_id,:condition_id,:delivery_tyoe_id,:prefecture_id,:shipment_date_id,:cost)
+    params.require(:item).permit(:product_name,:image,:explanation,:category_id,:condition_id,:delivery_type_id,:prefecture_id,:shipment_date_id,:cost).merge(user_id:current_user.id)
   end
 
   def move_to_index
