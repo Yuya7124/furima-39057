@@ -12,7 +12,7 @@ FactoryBot.define do
     cost             {Faker::Number.between(from: 300, to: 9999999)}
 
     after(:build) do |message|
-      message.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+      message.image.attach(io: File.open('public/images/パソコン、ノートPCのイラスト01[素材っち].png'), filename: 'test_image.png')
     end
   end
 end
