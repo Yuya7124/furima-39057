@@ -84,6 +84,12 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Cost must be less than 10000000")
       end
 
+      it "costが半角数字以外のとき" do
+        @item.cost = '５０００'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Cost is not a number")
+      end
+
       # 外部情報
       it "userが紐付いていないとき" do
         @item.user = nil
