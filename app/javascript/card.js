@@ -6,8 +6,7 @@ const pay = () => {
   const cvcElement = elements.create('cardCvc');
 
   numberElement.mount('#card-number');
-  expiryElement.mount('#card-exp-month');
-  expiryElement.mount('#card-exp-year');
+  expiryElement.mount('#card-expiry');
   cvcElement.mount('#card-cvc');
 
   const submit = document.getElementById("button");
@@ -26,7 +25,7 @@ const pay = () => {
       numberElement.clear();
       expiryElement.clear();
       cvcElement.clear();
-      //document.getElementById("charge-form").submit();
+      document.getElementById("charge-form").submit();
     });
   });
 };
