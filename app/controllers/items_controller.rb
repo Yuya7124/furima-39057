@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item, only: [:edit, :show, :update]
   before_action :move_to_path, only: [:edit, :destroy]
+  before_action :payed_redirect, only: :edit
 
   def index
     @items = Item.order("created_at DESC")
@@ -55,6 +56,12 @@ class ItemsController < ApplicationController
   def move_to_path
     unless @item.user_id == current_user.id
       redirect_to action: :index
+    end
+  end
+
+  def payed_redirect
+    if @item.order.present?
+      redirect_to root_path
     end
   end
 end
