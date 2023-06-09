@@ -74,7 +74,13 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include("Tel number can't be blank")
       end
 
-      it "tel_numberが10桁以上11桁以内に収まっていないとき" do
+      it "tel_numberが10桁未満なとき" do
+        @order_address.tel_number = '0901236'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Tel number is invalid")
+      end
+
+      it "tel_numberが11桁より大きいとき" do
         @order_address.tel_number = '09012345678899'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Tel number is invalid")
