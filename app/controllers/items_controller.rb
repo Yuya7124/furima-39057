@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:edit, :show, :update]
+  before_action :set_item, only: [:edit, :destroy, :show, :update]
   before_action :move_to_path, only: [:edit, :destroy]
   before_action :payed_redirect, only: :edit
 
@@ -54,7 +54,7 @@ class ItemsController < ApplicationController
   end
   
   def move_to_path
-    unless @item.user_id == current_user.id
+    unless current_user.id == @item.user_id
       redirect_to action: :index
     end
   end

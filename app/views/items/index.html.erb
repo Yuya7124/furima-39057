@@ -127,7 +127,7 @@
       新規投稿商品
     </div>
     <ul class='item-lists'> 
-    <% if @items.none %> 
+    <% unless @items.none %> 
       <% @items.each do |item| %>
         <li class='list'>
           <%= link_to item_path(item.id) do %> 
@@ -175,7 +175,7 @@
         </div>
         <% end %>
       </li>
-      <% end %>
+    <% end %>
     </ul>
   </div>
   <%# /商品一覧 %>
