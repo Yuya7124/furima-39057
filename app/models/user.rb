@@ -20,6 +20,7 @@ class User < ApplicationRecord
   end
 
   has_many :items
+  has_many :orders
 
   def remove_unnecessary_error_messages
     errors.messages.delete(:users)

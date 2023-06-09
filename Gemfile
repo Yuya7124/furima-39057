@@ -35,6 +35,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'gimei'
+  gem 'rails-i18n'
 end
 
 group :development do
@@ -73,3 +74,5 @@ end
 gem 'devise'
 gem 'active_hash'
 gem 'pry-rails'
+
+gem 'payjp'

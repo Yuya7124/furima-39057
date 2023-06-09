@@ -134,11 +134,11 @@
             <div class='item-img-content'>
               <%= image_tag item.image, class: "item-img" %>
 
-              <%# if 選択した商品に紐づく購入記録が存在していたら（空ではなかったら）、"sold out"と表示 %>
+              <% if item.order.present? %>
                 <div class='sold-out'>
                   <span>Sold Out!!</span>
                 </div>
-              <%# end %>
+              <% end %>
 
             </div>
             <div class='item-info'>
